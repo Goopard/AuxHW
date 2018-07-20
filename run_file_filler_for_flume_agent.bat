@@ -1,0 +1,1 @@
+ssh root@localhost -p 2222 command cat /usr/datasets/input.txt | while read line ; do echo "$line" ; sleep 0.2 ; done > output.txt
