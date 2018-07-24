@@ -1,0 +1,952 @@
+[root@sandbox-hdp usr]# flume-ng agent --conf conf --conf-file flume_conf.yaml --name a1 -Dflume.root.logger=INFO,console
+Info: Including Hadoop libraries found via (/usr/bin/hadoop) for HDFS access
+Info: Excluding /usr/hdp/2.6.4.0-91/hadoop/lib/slf4j-api-1.7.10.jar from classpath
+Info: Excluding /usr/hdp/2.6.4.0-91/hadoop/lib/slf4j-log4j12-1.7.10.jar from classpath
+Info: Excluding /usr/hdp/2.6.4.0-91/tez/lib/slf4j-api-1.7.5.jar from classpath
+Info: Including HBASE libraries found via (/usr/bin/hbase) for HBASE access
+Info: Excluding /usr/hdp/2.6.4.0-91/hbase/lib/slf4j-api-1.7.7.jar from classpath
+Info: Excluding /usr/hdp/2.6.4.0-91/hadoop/lib/slf4j-api-1.7.10.jar from classpath
+Info: Excluding /usr/hdp/2.6.4.0-91/hadoop/lib/slf4j-log4j12-1.7.10.jar from classpath
+Info: Excluding /usr/hdp/2.6.4.0-91/tez/lib/slf4j-api-1.7.5.jar from classpath
+Info: Excluding /usr/hdp/2.6.4.0-91/hadoop/lib/slf4j-api-1.7.10.jar from classpath
+Info: Excluding /usr/hdp/2.6.4.0-91/hadoop/lib/slf4j-log4j12-1.7.10.jar from classpath
+Info: Including Hive libraries found via () for Hive access
++ exec /usr/lib/jvm/java/bin/java -Xmx20m -Dflume.root.logger=INFO,console -cp 'conf:/usr/hdp/2.6.4.0-91/flume/lib/*:/usr/hdp/2.6.4.0-91/hadoop/conf:/usr/hdp/2.6.4.0-91/hadoop/lib/activation-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/apacheds-i18n-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/api-asn1-api-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/api-util-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-core-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-kms-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-s3-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/azure-keyvault-core-0.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/azure-storage-5.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-beanutils-1.7.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-beanutils-core-1.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-configuration-1.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-digester-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-lang3-3.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-net-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-client-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-framework-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-recipes-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/gson-2.2.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/hamcrest-core-1.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/httpclient-4.5.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/httpcore-4.4.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-annotations-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-core-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-databind-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-jaxrs-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-xc-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/java-xmlbuilder-0.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jaxb-api-2.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jaxb-impl-2.2.3-1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jcip-annotations-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jets3t-0.9.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jettison-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-sslengine-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/joda-time-2.9.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsch-0.1.54.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/json-smart-1.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsp-api-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/junit-4.11.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/mockito-all-1.8.5.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/native:/usr/hdp/2.6.4.0-91/hadoop/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/nimbus-jose-jwt-3.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ojdbc6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-hdfs-plugin-impl:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-hdfs-plugin-shim-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-plugin-classloader-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-yarn-plugin-impl:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-yarn-plugin-shim-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/stax-api-1.0-2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/zookeeper-3.4.6.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//azure-data-lake-store-sdk-2.1.4.jar:/usr/hdp/2.6.4.0-91/hadoop/.//bin:/usr/hdp/2.6.4.0-91/hadoop/.//client:/usr/hdp/2.6.4.0-91/hadoop/.//conf:/usr/hdp/2.6.4.0-91/hadoop/.//etc:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-annotations-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-annotations.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-auth-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-auth.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-aws-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-aws.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-azure-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-azure-datalake-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-azure-datalake.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-azure.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-common-2.7.3.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-common.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-common-tests.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-nfs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-nfs.jar:/usr/hdp/2.6.4.0-91/hadoop/.//lib:/usr/hdp/2.6.4.0-91/hadoop/.//libexec:/usr/hdp/2.6.4.0-91/hadoop/.//man:/usr/hdp/2.6.4.0-91/hadoop/.//mapreduce.tar.gz:/usr/hdp/2.6.4.0-91/hadoop/.//sbin:/usr/hdp/2.6.4.0-91/hadoop-hdfs/./:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-daemon-1.0.13.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-annotations-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-core-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-databind-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/leveldbjni-all-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/netty-all-4.0.52.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/okhttp-2.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/okio-1.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/xercesImpl-2.9.1.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/xml-apis-1.3.04.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//bin:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//etc:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-2.7.3.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-nfs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-nfs.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//lib:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//sbin:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//usr:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//webapps:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/activation-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/aopalliance-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/apacheds-i18n-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/api-asn1-api-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/api-util-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/azure-keyvault-core-0.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/azure-storage-5.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-beanutils-1.7.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-beanutils-core-1.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-configuration-1.6.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-digester-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-lang3-3.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-net-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/curator-client-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/curator-framework-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/curator-recipes-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/fst-2.24.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/gson-2.2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/guice-3.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/guice-servlet-3.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/httpclient-4.5.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/httpcore-4.4.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-annotations-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-core-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-databind-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-jaxrs-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-xc-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/javassist-3.18.1-GA.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/javax.inject-1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/java-xmlbuilder-0.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jaxb-api-2.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jaxb-impl-2.2.3-1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jcip-annotations-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-client-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-guice-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jets3t-0.9.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jettison-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jetty-sslengine-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jsch-0.1.54.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/json-smart-1.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jsp-api-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/leveldbjni-all-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/metrics-core-3.0.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/nimbus-jose-jwt-3.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/objenesis-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/stax-api-1.0-2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/zookeeper-3.4.6.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/zookeeper-3.4.6.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//bin:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//etc:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-api-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-api.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-applications-distributedshell-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-applications-distributedshell.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-applications-unmanaged-am-launcher-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-applications-unmanaged-am-launcher.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-client-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-client.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-common.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-registry-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-registry.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-applicationhistoryservice-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-applicationhistoryservice.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-common.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-nodemanager-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-nodemanager.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-resourcemanager-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-resourcemanager.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-sharedcachemanager-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-sharedcachemanager.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-tests-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-timeline-pluginstorage-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-timeline-pluginstorage.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-web-proxy-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-web-proxy.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//lib:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//sbin:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//usr:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/aopalliance-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/guice-3.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/guice-servlet-3.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/hamcrest-core-1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/javax.inject-1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jersey-guice-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/junit-4.11.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/leveldbjni-all-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//activation-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//apacheds-i18n-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//apacheds-kerberos-codec-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//api-asn1-api-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//api-util-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//azure-keyvault-core-0.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//bin:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-beanutils-1.7.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-beanutils-core-1.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-configuration-1.6.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-digester-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-httpclient-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-lang3-3.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-net-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//curator-client-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//curator-framework-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//curator-recipes-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//etc:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//gson-2.2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-ant-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-ant.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-archives-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-archives.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-auth-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-auth.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-datajoin-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-datajoin.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-distcp-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-distcp.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-extras-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-extras.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-gridmix-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-gridmix.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-app-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-app.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-common.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-core-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-core.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-hs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-hs.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-hs-plugins-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-hs-plugins.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-jobclient-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-jobclient-2.7.3.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-jobclient.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-jobclient-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-shuffle-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-shuffle.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-examples-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-examples.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-openstack-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-openstack.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-rumen-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-rumen.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-sls-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-sls.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-streaming-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-streaming.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hamcrest-core-1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//httpclient-4.5.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//httpcore-4.4.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jackson-jaxrs-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jackson-xc-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//java-xmlbuilder-0.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jaxb-api-2.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jaxb-impl-2.2.3-1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jcip-annotations-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jets3t-0.9.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jettison-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jetty-sslengine-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jsch-0.1.54.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//json-smart-1.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jsp-api-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//junit-4.11.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//lib:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//metrics-core-3.0.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//mockito-all-1.8.5.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//nimbus-jose-jwt-3.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//okhttp-2.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//okio-1.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//sbin:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//stax-api-1.0-2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//usr:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//zookeeper-3.4.6.2.6.4.0-91.jar:jdbc-mysql.jar:mysql-connector-java-5.1.17.jar:mysql-connector-java-5.1.37.jar:mysql-connector-java.jar:/usr/hdp/2.6.4.0-91/tez/conf:/usr/hdp/2.6.4.0-91/tez/doc:/usr/hdp/2.6.4.0-91/tez/lib:/usr/hdp/2.6.4.0-91/tez/man:/usr/hdp/2.6.4.0-91/tez/tez-api-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-common-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-dag-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-examples-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-history-parser-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-job-analyzer-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-mapreduce-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-runtime-internals-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-runtime-library-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-tests-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-yarn-timeline-cache-plugin-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-yarn-timeline-history-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-yarn-timeline-history-with-acls-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-yarn-timeline-history-with-fs-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/ui:/usr/hdp/2.6.4.0-91/tez/lib/azure-data-lake-store-sdk-2.1.4.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-collections4-4.1.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/tez/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-annotations-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-aws-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-azure-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-azure-datalake-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-mapreduce-client-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-mapreduce-client-core-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-yarn-server-timeline-pluginstorage-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-yarn-server-web-proxy-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/jersey-client-1.9.jar:/usr/hdp/2.6.4.0-91/tez/lib/jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/tez/lib/jettison-1.3.4.jar:/usr/hdp/2.6.4.0-91/tez/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/tez/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/tez/lib/jsr305-2.0.3.jar:/usr/hdp/2.6.4.0-91/tez/lib/metrics-core-3.1.0.jar:/usr/hdp/2.6.4.0-91/tez/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/tez/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/tez/lib/tez.tar.gz:/usr/hdp/2.6.4.0-91/tez/conf:/usr/hdp/2.6.4.0-91/hbase/conf:/usr/lib/jvm/java/lib/tools.jar:/usr/hdp/2.6.4.0-91/hbase:/usr/hdp/2.6.4.0-91/hbase/lib/activation-1.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/aopalliance-1.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/apacheds-i18n-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hbase/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hbase/lib/api-asn1-api-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hbase/lib/api-util-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hbase/lib/asm-3.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/avro-1.7.6.jar:/usr/hdp/2.6.4.0-91/hbase/lib/aws-java-sdk-core-1.10.6.jar:/usr/hdp/2.6.4.0-91/hbase/lib/aws-java-sdk-kms-1.10.6.jar:/usr/hdp/2.6.4.0-91/hbase/lib/aws-java-sdk-s3-1.10.6.jar:/usr/hdp/2.6.4.0-91/hbase/lib/azure-keyvault-core-0.8.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/azure-storage-5.4.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-beanutils-1.7.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-beanutils-core-1.8.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-codec-1.9.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-configuration-1.6.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-daemon-1.0.13.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-digester-1.8.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-el-1.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-lang3-3.5.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-logging-1.2.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-math-2.2.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/commons-net-3.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/curator-client-2.7.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/curator-framework-2.7.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/curator-recipes-2.7.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/disruptor-3.3.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/findbugs-annotations-1.3.9-1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/gson-2.2.4.jar:/usr/hdp/2.6.4.0-91/hbase/lib/guava-12.0.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/guice-3.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/guice-servlet-3.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-annotations-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-annotations-1.1.2.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-annotations.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-client-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-client.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-common-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-common-1.1.2.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-common.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-examples-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-examples.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-hadoop2-compat-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-hadoop2-compat.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-hadoop-compat-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-hadoop-compat.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-it-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-it-1.1.2.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-it.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-prefix-tree-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-prefix-tree.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-procedure-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-procedure.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-protocol-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-protocol.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-resource-bundle-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-resource-bundle.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-rest-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-rest.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-rsgroup-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-rsgroup-1.1.2.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-rsgroup.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-server-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-server-1.1.2.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-server.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-shell-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-shell.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-spark-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-spark.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-thrift-1.1.2.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/hbase-thrift.jar:/usr/hdp/2.6.4.0-91/hbase/lib/htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hbase/lib/httpclient-4.5.2.jar:/usr/hdp/2.6.4.0-91/hbase/lib/httpcore-4.4.4.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jackson-annotations-2.2.3.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jackson-core-2.2.3.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jackson-databind-2.2.3.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jackson-jaxrs-1.9.13.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jackson-xc-1.9.13.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jamon-runtime-2.4.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jasper-compiler-5.5.23.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jasper-runtime-5.5.23.jar:/usr/hdp/2.6.4.0-91/hbase/lib/javax.inject-1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/java-xmlbuilder-0.4.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jaxb-api-2.2.2.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jaxb-impl-2.2.3-1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jcip-annotations-1.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jcodings-1.0.8.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jersey-client-1.9.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jersey-guice-1.9.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jets3t-0.9.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jettison-1.3.3.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jetty-sslengine-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hbase/lib/joda-time-2.9.4.jar:/usr/hdp/2.6.4.0-91/hbase/lib/joni-2.1.2.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jsch-0.1.54.jar:/usr/hdp/2.6.4.0-91/hbase/lib/json-smart-1.1.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jsp-2.1-6.1.14.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jsp-api-2.1-6.1.14.jar:/usr/hdp/2.6.4.0-91/hbase/lib/jsr305-1.3.9.jar:/usr/hdp/2.6.4.0-91/hbase/lib/junit-4.12.jar:/usr/hdp/2.6.4.0-91/hbase/lib/leveldbjni-all-1.8.jar:/usr/hdp/2.6.4.0-91/hbase/lib/libthrift-0.9.3.jar:/usr/hdp/2.6.4.0-91/hbase/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hbase/lib/metrics-core-2.2.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/netty-3.2.4.Final.jar:/usr/hdp/2.6.4.0-91/hbase/lib/netty-all-4.0.52.Final.jar:/usr/hdp/2.6.4.0-91/hbase/lib/nimbus-jose-jwt-3.9.jar:/usr/hdp/2.6.4.0-91/hbase/lib/ojdbc6.jar:/usr/hdp/2.6.4.0-91/hbase/lib/okhttp-2.4.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/okio-1.4.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hbase/lib/phoenix-server.jar:/usr/hdp/2.6.4.0-91/hbase/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/ranger-hbase-plugin-shim-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/ranger-plugin-classloader-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hbase/lib/servlet-api-2.5-6.1.14.jar:/usr/hdp/2.6.4.0-91/hbase/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hbase/lib/snappy-java-1.0.5.jar:/usr/hdp/2.6.4.0-91/hbase/lib/spymemcached-2.11.6.jar:/usr/hdp/2.6.4.0-91/hbase/lib/xercesImpl-2.9.1.jar:/usr/hdp/2.6.4.0-91/hbase/lib/xml-apis-1.3.04.jar:/usr/hdp/2.6.4.0-91/hbase/lib/xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hbase/lib/xz-1.0.jar:/usr/hdp/2.6.4.0-91/hbase/lib/zookeeper.jar:/usr/hdp/2.6.4.0-91/hadoop/conf:/usr/hdp/2.6.4.0-91/hadoop/lib/activation-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/apacheds-i18n-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/api-asn1-api-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/api-util-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-core-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-kms-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-s3-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/azure-keyvault-core-0.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/azure-storage-5.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-beanutils-1.7.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-beanutils-core-1.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-configuration-1.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-digester-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-lang3-3.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-net-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-client-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-framework-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-recipes-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/gson-2.2.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/hamcrest-core-1.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/httpclient-4.5.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/httpcore-4.4.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-annotations-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-core-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-databind-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-jaxrs-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-xc-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/java-xmlbuilder-0.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jaxb-api-2.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jaxb-impl-2.2.3-1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jcip-annotations-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jets3t-0.9.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jettison-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-sslengine-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/joda-time-2.9.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsch-0.1.54.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/json-smart-1.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsp-api-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/junit-4.11.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/mockito-all-1.8.5.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/native:/usr/hdp/2.6.4.0-91/hadoop/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/nimbus-jose-jwt-3.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ojdbc6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-hdfs-plugin-impl:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-hdfs-plugin-shim-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-plugin-classloader-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-yarn-plugin-impl:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-yarn-plugin-shim-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/stax-api-1.0-2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/zookeeper-3.4.6.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//azure-data-lake-store-sdk-2.1.4.jar:/usr/hdp/2.6.4.0-91/hadoop/.//bin:/usr/hdp/2.6.4.0-91/hadoop/.//client:/usr/hdp/2.6.4.0-91/hadoop/.//conf:/usr/hdp/2.6.4.0-91/hadoop/.//etc:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-annotations-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-annotations.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-auth-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-auth.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-aws-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-aws.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-azure-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-azure-datalake-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-azure-datalake.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-azure.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-common-2.7.3.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-common.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-common-tests.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-nfs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/.//hadoop-nfs.jar:/usr/hdp/2.6.4.0-91/hadoop/.//lib:/usr/hdp/2.6.4.0-91/hadoop/.//libexec:/usr/hdp/2.6.4.0-91/hadoop/.//man:/usr/hdp/2.6.4.0-91/hadoop/.//mapreduce.tar.gz:/usr/hdp/2.6.4.0-91/hadoop/.//sbin:/usr/hdp/2.6.4.0-91/hadoop-hdfs/./:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-daemon-1.0.13.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-annotations-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-core-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-databind-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/leveldbjni-all-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/netty-all-4.0.52.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/okhttp-2.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/okio-1.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/xercesImpl-2.9.1.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/xml-apis-1.3.04.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/lib/xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//bin:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//etc:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-2.7.3.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-nfs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-nfs.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//hadoop-hdfs-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//lib:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//sbin:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//usr:/usr/hdp/2.6.4.0-91/hadoop-hdfs/.//webapps:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/activation-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/aopalliance-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/apacheds-i18n-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/api-asn1-api-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/api-util-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/azure-keyvault-core-0.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/azure-storage-5.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-beanutils-1.7.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-beanutils-core-1.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-configuration-1.6.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-digester-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-lang3-3.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/commons-net-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/curator-client-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/curator-framework-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/curator-recipes-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/fst-2.24.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/gson-2.2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/guice-3.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/guice-servlet-3.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/httpclient-4.5.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/httpcore-4.4.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-annotations-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-core-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-databind-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-jaxrs-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jackson-xc-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/javassist-3.18.1-GA.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/javax.inject-1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/java-xmlbuilder-0.4.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jaxb-api-2.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jaxb-impl-2.2.3-1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jcip-annotations-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-client-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-guice-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jets3t-0.9.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jettison-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jetty-sslengine-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jsch-0.1.54.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/json-smart-1.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jsp-api-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/leveldbjni-all-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/metrics-core-3.0.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/nimbus-jose-jwt-3.9.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/objenesis-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/stax-api-1.0-2.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/zookeeper-3.4.6.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/lib/zookeeper-3.4.6.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//bin:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//etc:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-api-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-api.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-applications-distributedshell-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-applications-distributedshell.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-applications-unmanaged-am-launcher-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-applications-unmanaged-am-launcher.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-client-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-client.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-common.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-registry-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-registry.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-applicationhistoryservice-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-applicationhistoryservice.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-common.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-nodemanager-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-nodemanager.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-resourcemanager-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-resourcemanager.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-sharedcachemanager-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-sharedcachemanager.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-tests-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-timeline-pluginstorage-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-timeline-pluginstorage.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-web-proxy-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//hadoop-yarn-server-web-proxy.jar:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//lib:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//sbin:/usr/hdp/2.6.4.0-91/hadoop-yarn/.//usr:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/aopalliance-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/guice-3.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/guice-servlet-3.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/hamcrest-core-1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/javax.inject-1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jersey-guice-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/junit-4.11.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/leveldbjni-all-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/lib/xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//activation-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//apacheds-i18n-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//apacheds-kerberos-codec-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//api-asn1-api-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//api-util-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//azure-keyvault-core-0.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//bin:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-beanutils-1.7.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-beanutils-core-1.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-configuration-1.6.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-digester-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-httpclient-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-lang3-3.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//commons-net-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//curator-client-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//curator-framework-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//curator-recipes-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//etc:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//gson-2.2.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-ant-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-ant.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-archives-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-archives.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-auth-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-auth.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-datajoin-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-datajoin.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-distcp-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-distcp.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-extras-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-extras.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-gridmix-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-gridmix.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-app-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-app.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-common.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-core-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-core.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-hs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-hs.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-hs-plugins-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-hs-plugins.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-jobclient-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-jobclient-2.7.3.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-jobclient.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-jobclient-tests.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-shuffle-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-client-shuffle.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-examples-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-mapreduce-examples.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-openstack-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-openstack.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-rumen-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-rumen.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-sls-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-sls.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-streaming-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hadoop-streaming.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//hamcrest-core-1.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//httpclient-4.5.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//httpcore-4.4.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jackson-jaxrs-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jackson-xc-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//java-xmlbuilder-0.4.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jaxb-api-2.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jaxb-impl-2.2.3-1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jcip-annotations-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jets3t-0.9.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jettison-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jetty-sslengine-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jsch-0.1.54.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//json-smart-1.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jsp-api-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//junit-4.11.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//lib:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//metrics-core-3.0.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//mockito-all-1.8.5.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//nimbus-jose-jwt-3.9.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//okhttp-2.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//okio-1.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//sbin:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//stax-api-1.0-2.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//usr:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop-mapreduce/.//zookeeper-3.4.6.2.6.4.0-91.jar:jdbc-mysql.jar:mysql-connector-java-5.1.17.jar:mysql-connector-java-5.1.37.jar:mysql-connector-java.jar:/usr/hdp/2.6.4.0-91/tez/conf:/usr/hdp/2.6.4.0-91/tez/doc:/usr/hdp/2.6.4.0-91/tez/lib:/usr/hdp/2.6.4.0-91/tez/man:/usr/hdp/2.6.4.0-91/tez/tez-api-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-common-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-dag-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-examples-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-history-parser-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-job-analyzer-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-mapreduce-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-runtime-internals-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-runtime-library-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-tests-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-yarn-timeline-cache-plugin-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-yarn-timeline-history-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-yarn-timeline-history-with-acls-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/tez-yarn-timeline-history-with-fs-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/ui:/usr/hdp/2.6.4.0-91/tez/lib/azure-data-lake-store-sdk-2.1.4.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-collections4-4.1.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/tez/lib/commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/tez/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-annotations-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-aws-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-azure-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-azure-datalake-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-mapreduce-client-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-mapreduce-client-core-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-yarn-server-timeline-pluginstorage-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/hadoop-yarn-server-web-proxy-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/tez/lib/jersey-client-1.9.jar:/usr/hdp/2.6.4.0-91/tez/lib/jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/tez/lib/jettison-1.3.4.jar:/usr/hdp/2.6.4.0-91/tez/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/tez/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/tez/lib/jsr305-2.0.3.jar:/usr/hdp/2.6.4.0-91/tez/lib/metrics-core-3.1.0.jar:/usr/hdp/2.6.4.0-91/tez/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/tez/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/tez/lib/tez.tar.gz:/usr/hdp/2.6.4.0-91/tez/conf:/usr/hdp/2.6.4.0-91/hadoop/conf:/usr/hdp/2.6.4.0-91/hadoop/azure-data-lake-store-sdk-2.1.4.jar:/usr/hdp/2.6.4.0-91/hadoop/bin:/usr/hdp/2.6.4.0-91/hadoop/client:/usr/hdp/2.6.4.0-91/hadoop/conf:/usr/hdp/2.6.4.0-91/hadoop/etc:/usr/hdp/2.6.4.0-91/hadoop/hadoop-annotations-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-annotations.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-auth-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-auth.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-aws-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-aws.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-azure-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-azure-datalake-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-azure-datalake.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-azure.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-common-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-common-2.7.3.2.6.4.0-91-tests.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-common.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-common-tests.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-nfs-2.7.3.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/hadoop-nfs.jar:/usr/hdp/2.6.4.0-91/hadoop/lib:/usr/hdp/2.6.4.0-91/hadoop/libexec:/usr/hdp/2.6.4.0-91/hadoop/man:/usr/hdp/2.6.4.0-91/hadoop/mapreduce.tar.gz:/usr/hdp/2.6.4.0-91/hadoop/sbin:/usr/hdp/2.6.4.0-91/hadoop/lib/activation-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/apacheds-i18n-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/apacheds-kerberos-codec-2.0.0-M15.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/api-asn1-api-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/api-util-1.0.0-M20.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/asm-3.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/avro-1.7.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-core-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-kms-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/aws-java-sdk-s3-1.10.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/azure-keyvault-core-0.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/azure-storage-5.4.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-beanutils-1.7.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-beanutils-core-1.8.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-cli-1.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-codec-1.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-collections-3.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-compress-1.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-configuration-1.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-digester-1.8.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-io-2.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-lang-2.6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-lang3-3.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-logging-1.1.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-math3-3.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/commons-net-3.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-client-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-framework-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/curator-recipes-2.7.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/gson-2.2.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/guava-11.0.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/hamcrest-core-1.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/htrace-core-3.1.0-incubating.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/httpclient-4.5.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/httpcore-4.4.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-annotations-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-core-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-core-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-databind-2.2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-jaxrs-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-mapper-asl-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jackson-xc-1.9.13.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/java-xmlbuilder-0.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jaxb-api-2.2.2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jaxb-impl-2.2.3-1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jcip-annotations-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-core-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-json-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jersey-server-1.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jets3t-0.9.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jettison-1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-sslengine-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jetty-util-6.1.26.hwx.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/joda-time-2.9.4.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsch-0.1.54.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/json-smart-1.1.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsp-api-2.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/jsr305-3.0.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/junit-4.11.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/log4j-1.2.17.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/mockito-all-1.8.5.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/native:/usr/hdp/2.6.4.0-91/hadoop/lib/netty-3.6.2.Final.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/nimbus-jose-jwt-3.9.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ojdbc6.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/paranamer-2.3.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/protobuf-java-2.5.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-hdfs-plugin-impl:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-hdfs-plugin-shim-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-plugin-classloader-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-yarn-plugin-impl:/usr/hdp/2.6.4.0-91/hadoop/lib/ranger-yarn-plugin-shim-0.7.0.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/servlet-api-2.5.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/snappy-java-1.0.4.1.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/stax-api-1.0-2.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/xmlenc-0.52.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/xz-1.0.jar:/usr/hdp/2.6.4.0-91/hadoop/lib/zookeeper-3.4.6.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/zookeeper/bin:/usr/hdp/2.6.4.0-91/zookeeper/conf:/usr/hdp/2.6.4.0-91/zookeeper/doc:/usr/hdp/2.6.4.0-91/zookeeper/etc:/usr/hdp/2.6.4.0-91/zookeeper/lib:/usr/hdp/2.6.4.0-91/zookeeper/man:/usr/hdp/2.6.4.0-91/zookeeper/usr:/usr/hdp/2.6.4.0-91/zookeeper/zookeeper-3.4.6.2.6.4.0-91.jar:/usr/hdp/2.6.4.0-91/zookeeper/zookeeper.jar:/conf:/lib/*' -Djava.library.path=::/usr/hdp/2.6.4.0-91/hadoop/lib/native/Linux-amd64-64:/usr/hdp/2.6.4.0-91/hadoop/lib/native::/usr/hdp/2.6.4.0-91/hadoop/lib/native/Linux-amd64-64:/usr/hdp/2.6.4.0-91/hadoop/lib/native org.apache.flume.node.Application --conf-file flume_conf.yaml --name a1
+18/07/15 07:52:27 INFO node.PollingPropertiesFileConfigurationProvider: Configuration provider starting
+18/07/15 07:52:27 INFO node.PollingPropertiesFileConfigurationProvider: Reloading configuration file:flume_conf.yaml
+18/07/15 07:52:27 INFO conf.FlumeConfiguration: Added sinks: k1 Agent: a1
+18/07/15 07:52:27 INFO conf.FlumeConfiguration: Processing:k1
+18/07/15 07:52:27 INFO conf.FlumeConfiguration: Processing:k1
+18/07/15 07:52:27 INFO conf.FlumeConfiguration: Processing:k1
+18/07/15 07:52:27 INFO conf.FlumeConfiguration: Processing:k1
+18/07/15 07:52:27 INFO conf.FlumeConfiguration: Post-validation flume configuration contains configuration for agents: [a1]
+18/07/15 07:52:27 INFO node.AbstractConfigurationProvider: Creating channels
+18/07/15 07:52:27 INFO channel.DefaultChannelFactory: Creating instance of channel c1 type memory
+18/07/15 07:52:27 INFO node.AbstractConfigurationProvider: Created channel c1
+18/07/15 07:52:27 INFO source.DefaultSourceFactory: Creating instance of source r1, type TAILDIR
+18/07/15 07:52:27 INFO sink.DefaultSinkFactory: Creating instance of sink: k1, type: hdfs
+18/07/15 07:52:28 INFO hdfs.HDFSEventSink: Hadoop Security enabled: false
+18/07/15 07:52:28 INFO node.AbstractConfigurationProvider: Channel c1 connected to [r1, k1]
+18/07/15 07:52:28 INFO node.Application: Starting new configuration:{ sourceRunners:{r1=PollableSourceRunner: { source:Taildir source: { positionFile: taildir_position.json, skipToEnd: false, byteOffsetHeader: false, idleTimeout: 120000, writePosInterval: 3000 } counterGroup:{ name:null counters:{} } }} sinkRunners:{k1=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@7a8c7bf1 counterGroup:{ name:null counters:{} } }} channels:{c1=org.apache.flume.channel.MemoryChannel{name: c1}} }
+18/07/15 07:52:28 INFO node.Application: Starting Channel c1
+18/07/15 07:52:28 INFO node.Application: Waiting for channel: c1 to start. Sleeping for 500 ms
+18/07/15 07:52:28 INFO instrumentation.MonitoredCounterGroup: Monitored counter group for type: CHANNEL, name: c1: Successfully registered new MBean.
+18/07/15 07:52:28 INFO instrumentation.MonitoredCounterGroup: Component type: CHANNEL, name: c1 started
+18/07/15 07:52:28 INFO node.Application: Starting Sink k1
+18/07/15 07:52:28 INFO node.Application: Starting Source r1
+18/07/15 07:52:28 INFO taildir.TaildirSource: r1 TaildirSource source starting with directory: {f1=/usr/output.txt}
+18/07/15 07:52:28 INFO instrumentation.MonitoredCounterGroup: Monitored counter group for type: SINK, name: k1: Successfully registered new MBean.
+18/07/15 07:52:28 INFO instrumentation.MonitoredCounterGroup: Component type: SINK, name: k1 started
+18/07/15 07:52:28 INFO taildir.ReliableTaildirEventReader: tailFileTable: {f1={/usr=output.txt}}
+18/07/15 07:52:28 INFO taildir.ReliableTaildirEventReader: headerTable: {}
+18/07/15 07:52:28 INFO taildir.ReliableTaildirEventReader: Opening file: /usr/output.txt, inode: 1982823, pos: 0
+18/07/15 07:52:28 INFO taildir.ReliableTaildirEventReader: Updating position from position file: taildir_position.json
+18/07/15 07:52:28 INFO taildir.TailFile: Updated position, file: /usr/output.txt, inode: 1982823, pos: 0
+18/07/15 07:52:28 INFO instrumentation.MonitoredCounterGroup: Monitored counter group for type: SOURCE, name: r1: Successfully registered new MBean.
+18/07/15 07:52:28 INFO instrumentation.MonitoredCounterGroup: Component type: SOURCE, name: r1 started
+18/07/15 07:53:54 INFO hdfs.HDFSDataStream: Serializer = TEXT, UseRawLocalFileSystem = false
+18/07/15 07:53:54 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234853.tmp
+18/07/15 07:53:56 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234853.tmp
+18/07/15 07:53:56 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234853.tmp to /user/raj_ops/output/FlumeData.1531641234853
+18/07/15 07:53:56 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234854.tmp
+18/07/15 07:53:58 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234854.tmp
+18/07/15 07:53:58 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234854.tmp to /user/raj_ops/output/FlumeData.1531641234854
+18/07/15 07:53:58 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234855.tmp
+18/07/15 07:54:00 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234855.tmp
+18/07/15 07:54:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234855.tmp to /user/raj_ops/output/FlumeData.1531641234855
+18/07/15 07:54:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234856.tmp
+18/07/15 07:54:02 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234856.tmp
+18/07/15 07:54:02 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234856.tmp to /user/raj_ops/output/FlumeData.1531641234856
+18/07/15 07:54:02 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234857.tmp
+18/07/15 07:54:04 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234857.tmp
+18/07/15 07:54:04 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234857.tmp to /user/raj_ops/output/FlumeData.1531641234857
+18/07/15 07:54:04 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234858.tmp
+18/07/15 07:54:06 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234858.tmp
+18/07/15 07:54:06 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234858.tmp to /user/raj_ops/output/FlumeData.1531641234858
+18/07/15 07:54:06 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234859.tmp
+18/07/15 07:54:08 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234859.tmp
+18/07/15 07:54:08 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234859.tmp to /user/raj_ops/output/FlumeData.1531641234859
+18/07/15 07:54:08 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234860.tmp
+18/07/15 07:54:10 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234860.tmp
+18/07/15 07:54:10 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234860.tmp to /user/raj_ops/output/FlumeData.1531641234860
+18/07/15 07:54:10 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234861.tmp
+18/07/15 07:54:12 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234861.tmp
+18/07/15 07:54:12 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234861.tmp to /user/raj_ops/output/FlumeData.1531641234861
+18/07/15 07:54:12 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234862.tmp
+18/07/15 07:54:15 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234862.tmp
+18/07/15 07:54:15 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234862.tmp to /user/raj_ops/output/FlumeData.1531641234862
+18/07/15 07:54:15 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234863.tmp
+18/07/15 07:54:17 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234863.tmp
+18/07/15 07:54:17 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234863.tmp to /user/raj_ops/output/FlumeData.1531641234863
+18/07/15 07:54:17 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234864.tmp
+18/07/15 07:54:19 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234864.tmp
+18/07/15 07:54:19 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234864.tmp to /user/raj_ops/output/FlumeData.1531641234864
+18/07/15 07:54:19 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234865.tmp
+18/07/15 07:54:21 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234865.tmp
+18/07/15 07:54:21 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234865.tmp to /user/raj_ops/output/FlumeData.1531641234865
+18/07/15 07:54:21 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234866.tmp
+18/07/15 07:54:23 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234866.tmp
+18/07/15 07:54:23 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234866.tmp to /user/raj_ops/output/FlumeData.1531641234866
+18/07/15 07:54:23 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234867.tmp
+18/07/15 07:54:25 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234867.tmp
+18/07/15 07:54:25 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234867.tmp to /user/raj_ops/output/FlumeData.1531641234867
+18/07/15 07:54:25 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234868.tmp
+18/07/15 07:54:27 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234868.tmp
+18/07/15 07:54:27 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234868.tmp to /user/raj_ops/output/FlumeData.1531641234868
+18/07/15 07:54:27 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234869.tmp
+18/07/15 07:54:29 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234869.tmp
+18/07/15 07:54:29 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234869.tmp
+18/07/15 07:54:29 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234869.tmp to /user/raj_ops/output/FlumeData.1531641234869
+18/07/15 07:54:29 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234870.tmp
+18/07/15 07:54:31 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234870.tmp
+18/07/15 07:54:31 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234870.tmp to /user/raj_ops/output/FlumeData.1531641234870
+18/07/15 07:54:31 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234871.tmp
+18/07/15 07:54:33 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234871.tmp
+18/07/15 07:54:33 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234871.tmp to /user/raj_ops/output/FlumeData.1531641234871
+18/07/15 07:54:33 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234872.tmp
+18/07/15 07:54:37 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234872.tmp
+18/07/15 07:54:37 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234872.tmp to /user/raj_ops/output/FlumeData.1531641234872
+18/07/15 07:54:37 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234873.tmp
+18/07/15 07:54:38 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234873.tmp
+18/07/15 07:54:38 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234873.tmp to /user/raj_ops/output/FlumeData.1531641234873
+18/07/15 07:54:38 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234874.tmp
+18/07/15 07:54:39 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234874.tmp
+18/07/15 07:54:39 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234874.tmp to /user/raj_ops/output/FlumeData.1531641234874
+18/07/15 07:54:39 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234875.tmp
+18/07/15 07:54:41 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234875.tmp
+18/07/15 07:54:41 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234875.tmp to /user/raj_ops/output/FlumeData.1531641234875
+18/07/15 07:54:41 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234876.tmp
+18/07/15 07:54:43 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234876.tmp
+18/07/15 07:54:43 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234876.tmp to /user/raj_ops/output/FlumeData.1531641234876
+18/07/15 07:54:43 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234877.tmp
+18/07/15 07:54:45 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234877.tmp
+18/07/15 07:54:45 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234877.tmp to /user/raj_ops/output/FlumeData.1531641234877
+18/07/15 07:54:45 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234878.tmp
+18/07/15 07:54:47 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234878.tmp
+18/07/15 07:54:47 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234878.tmp to /user/raj_ops/output/FlumeData.1531641234878
+18/07/15 07:54:47 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234879.tmp
+18/07/15 07:54:49 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234879.tmp
+18/07/15 07:54:49 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234879.tmp to /user/raj_ops/output/FlumeData.1531641234879
+18/07/15 07:54:49 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234880.tmp
+18/07/15 07:54:51 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234880.tmp
+18/07/15 07:54:51 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234880.tmp to /user/raj_ops/output/FlumeData.1531641234880
+18/07/15 07:54:51 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234881.tmp
+18/07/15 07:54:53 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234881.tmp
+18/07/15 07:54:53 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234881.tmp to /user/raj_ops/output/FlumeData.1531641234881
+18/07/15 07:54:53 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234882.tmp
+18/07/15 07:54:57 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234882.tmp
+18/07/15 07:54:57 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234882.tmp to /user/raj_ops/output/FlumeData.1531641234882
+18/07/15 07:54:57 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234883.tmp
+18/07/15 07:54:58 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234883.tmp
+18/07/15 07:54:58 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234883.tmp to /user/raj_ops/output/FlumeData.1531641234883
+18/07/15 07:54:58 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234884.tmp
+18/07/15 07:54:59 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234884.tmp
+18/07/15 07:54:59 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234884.tmp to /user/raj_ops/output/FlumeData.1531641234884
+18/07/15 07:54:59 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234885.tmp
+18/07/15 07:55:01 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234885.tmp
+18/07/15 07:55:01 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234885.tmp to /user/raj_ops/output/FlumeData.1531641234885
+18/07/15 07:55:01 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234886.tmp
+18/07/15 07:55:03 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234886.tmp
+18/07/15 07:55:03 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234886.tmp to /user/raj_ops/output/FlumeData.1531641234886
+18/07/15 07:55:03 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234887.tmp
+18/07/15 07:55:05 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234887.tmp
+18/07/15 07:55:05 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234887.tmp to /user/raj_ops/output/FlumeData.1531641234887
+18/07/15 07:55:05 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234888.tmp
+18/07/15 07:55:07 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234888.tmp
+18/07/15 07:55:07 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234888.tmp to /user/raj_ops/output/FlumeData.1531641234888
+18/07/15 07:55:07 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234889.tmp
+18/07/15 07:55:09 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234889.tmp
+18/07/15 07:55:09 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234889.tmp to /user/raj_ops/output/FlumeData.1531641234889
+18/07/15 07:55:09 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234890.tmp
+18/07/15 07:55:11 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234890.tmp
+18/07/15 07:55:11 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234890.tmp to /user/raj_ops/output/FlumeData.1531641234890
+18/07/15 07:55:11 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234891.tmp
+18/07/15 07:55:13 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234891.tmp
+18/07/15 07:55:13 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234891.tmp to /user/raj_ops/output/FlumeData.1531641234891
+18/07/15 07:55:13 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234892.tmp
+18/07/15 07:55:17 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234892.tmp
+18/07/15 07:55:17 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234892.tmp to /user/raj_ops/output/FlumeData.1531641234892
+18/07/15 07:55:17 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234893.tmp
+18/07/15 07:55:18 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234893.tmp
+18/07/15 07:55:18 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234893.tmp to /user/raj_ops/output/FlumeData.1531641234893
+18/07/15 07:55:18 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234894.tmp
+18/07/15 07:55:20 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234894.tmp
+18/07/15 07:55:20 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234894.tmp to /user/raj_ops/output/FlumeData.1531641234894
+18/07/15 07:55:20 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234895.tmp
+18/07/15 07:55:22 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234895.tmp
+18/07/15 07:55:22 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234895.tmp to /user/raj_ops/output/FlumeData.1531641234895
+18/07/15 07:55:22 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234896.tmp
+18/07/15 07:55:24 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234896.tmp
+18/07/15 07:55:24 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234896.tmp to /user/raj_ops/output/FlumeData.1531641234896
+18/07/15 07:55:24 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234897.tmp
+18/07/15 07:55:26 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234897.tmp
+18/07/15 07:55:26 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234897.tmp to /user/raj_ops/output/FlumeData.1531641234897
+18/07/15 07:55:26 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234898.tmp
+18/07/15 07:55:28 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234898.tmp
+18/07/15 07:55:28 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234898.tmp to /user/raj_ops/output/FlumeData.1531641234898
+18/07/15 07:55:28 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234899.tmp
+18/07/15 07:55:30 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234899.tmp
+18/07/15 07:55:30 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234899.tmp to /user/raj_ops/output/FlumeData.1531641234899
+18/07/15 07:55:30 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234900.tmp
+18/07/15 07:55:32 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234900.tmp
+18/07/15 07:55:32 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234900.tmp to /user/raj_ops/output/FlumeData.1531641234900
+18/07/15 07:55:32 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234901.tmp
+18/07/15 07:55:34 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234901.tmp
+18/07/15 07:55:34 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234901.tmp to /user/raj_ops/output/FlumeData.1531641234901
+18/07/15 07:55:34 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234902.tmp
+18/07/15 07:55:38 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234902.tmp
+18/07/15 07:55:38 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234902.tmp to /user/raj_ops/output/FlumeData.1531641234902
+18/07/15 07:55:38 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234903.tmp
+18/07/15 07:55:38 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234903.tmp
+18/07/15 07:55:38 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234903.tmp to /user/raj_ops/output/FlumeData.1531641234903
+18/07/15 07:55:38 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234904.tmp
+18/07/15 07:55:40 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234904.tmp
+18/07/15 07:55:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234904.tmp to /user/raj_ops/output/FlumeData.1531641234904
+18/07/15 07:55:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234905.tmp
+18/07/15 07:55:42 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234905.tmp
+18/07/15 07:55:42 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234905.tmp to /user/raj_ops/output/FlumeData.1531641234905
+18/07/15 07:55:42 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234906.tmp
+18/07/15 07:55:44 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234906.tmp
+18/07/15 07:55:44 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234906.tmp to /user/raj_ops/output/FlumeData.1531641234906
+18/07/15 07:55:44 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234907.tmp
+18/07/15 07:55:46 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234907.tmp
+18/07/15 07:55:46 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234907.tmp to /user/raj_ops/output/FlumeData.1531641234907
+18/07/15 07:55:46 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234908.tmp
+18/07/15 07:55:48 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234908.tmp
+18/07/15 07:55:48 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234908.tmp to /user/raj_ops/output/FlumeData.1531641234908
+18/07/15 07:55:48 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234909.tmp
+18/07/15 07:55:50 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234909.tmp
+18/07/15 07:55:50 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234909.tmp to /user/raj_ops/output/FlumeData.1531641234909
+18/07/15 07:55:50 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234910.tmp
+18/07/15 07:55:52 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234910.tmp
+18/07/15 07:55:52 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234910.tmp to /user/raj_ops/output/FlumeData.1531641234910
+18/07/15 07:55:52 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234911.tmp
+18/07/15 07:55:54 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234911.tmp
+18/07/15 07:55:54 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234911.tmp to /user/raj_ops/output/FlumeData.1531641234911
+18/07/15 07:55:54 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234912.tmp
+18/07/15 07:55:58 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234912.tmp
+18/07/15 07:55:58 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234912.tmp to /user/raj_ops/output/FlumeData.1531641234912
+18/07/15 07:55:58 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234913.tmp
+18/07/15 07:55:58 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234913.tmp
+18/07/15 07:55:58 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234913.tmp to /user/raj_ops/output/FlumeData.1531641234913
+18/07/15 07:55:58 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234914.tmp
+18/07/15 07:56:00 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234914.tmp
+18/07/15 07:56:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234914.tmp to /user/raj_ops/output/FlumeData.1531641234914
+18/07/15 07:56:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234915.tmp
+18/07/15 07:56:02 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234915.tmp
+18/07/15 07:56:03 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234915.tmp to /user/raj_ops/output/FlumeData.1531641234915
+18/07/15 07:56:03 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234916.tmp
+18/07/15 07:56:04 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234916.tmp
+18/07/15 07:56:04 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234916.tmp to /user/raj_ops/output/FlumeData.1531641234916
+18/07/15 07:56:04 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234917.tmp
+18/07/15 07:56:06 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234917.tmp
+18/07/15 07:56:06 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234917.tmp to /user/raj_ops/output/FlumeData.1531641234917
+18/07/15 07:56:06 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234918.tmp
+18/07/15 07:56:08 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234918.tmp
+18/07/15 07:56:08 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234918.tmp to /user/raj_ops/output/FlumeData.1531641234918
+18/07/15 07:56:08 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234919.tmp
+18/07/15 07:56:10 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234919.tmp
+18/07/15 07:56:10 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234919.tmp to /user/raj_ops/output/FlumeData.1531641234919
+18/07/15 07:56:10 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234920.tmp
+18/07/15 07:56:12 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234920.tmp
+18/07/15 07:56:12 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234920.tmp to /user/raj_ops/output/FlumeData.1531641234920
+18/07/15 07:56:12 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234921.tmp
+18/07/15 07:56:14 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234921.tmp
+18/07/15 07:56:14 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234921.tmp to /user/raj_ops/output/FlumeData.1531641234921
+18/07/15 07:56:14 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234922.tmp
+18/07/15 07:56:18 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234922.tmp
+18/07/15 07:56:18 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234922.tmp to /user/raj_ops/output/FlumeData.1531641234922
+18/07/15 07:56:18 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234923.tmp
+18/07/15 07:56:18 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234923.tmp
+18/07/15 07:56:18 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234923.tmp to /user/raj_ops/output/FlumeData.1531641234923
+18/07/15 07:56:18 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234924.tmp
+18/07/15 07:56:20 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234924.tmp
+18/07/15 07:56:20 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234924.tmp to /user/raj_ops/output/FlumeData.1531641234924
+18/07/15 07:56:20 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234925.tmp
+18/07/15 07:56:22 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234925.tmp
+18/07/15 07:56:22 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234925.tmp to /user/raj_ops/output/FlumeData.1531641234925
+18/07/15 07:56:22 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234926.tmp
+18/07/15 07:56:24 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234926.tmp
+18/07/15 07:56:25 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234926.tmp to /user/raj_ops/output/FlumeData.1531641234926
+18/07/15 07:56:25 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234927.tmp
+18/07/15 07:56:26 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234927.tmp
+18/07/15 07:56:26 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234927.tmp to /user/raj_ops/output/FlumeData.1531641234927
+18/07/15 07:56:26 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234928.tmp
+18/07/15 07:56:28 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234928.tmp
+18/07/15 07:56:28 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234928.tmp to /user/raj_ops/output/FlumeData.1531641234928
+18/07/15 07:56:28 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234929.tmp
+18/07/15 07:56:30 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234929.tmp
+18/07/15 07:56:30 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234929.tmp to /user/raj_ops/output/FlumeData.1531641234929
+18/07/15 07:56:30 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234930.tmp
+18/07/15 07:56:32 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234930.tmp
+18/07/15 07:56:32 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234930.tmp to /user/raj_ops/output/FlumeData.1531641234930
+18/07/15 07:56:32 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234931.tmp
+18/07/15 07:56:37 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234931.tmp
+18/07/15 07:56:37 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234931.tmp to /user/raj_ops/output/FlumeData.1531641234931
+18/07/15 07:56:37 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234932.tmp
+18/07/15 07:56:38 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234932.tmp
+18/07/15 07:56:38 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234932.tmp to /user/raj_ops/output/FlumeData.1531641234932
+18/07/15 07:56:38 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234933.tmp
+18/07/15 07:56:39 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234933.tmp
+18/07/15 07:56:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234933.tmp to /user/raj_ops/output/FlumeData.1531641234933
+18/07/15 07:56:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234934.tmp
+18/07/15 07:56:41 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234934.tmp
+18/07/15 07:56:41 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234934.tmp to /user/raj_ops/output/FlumeData.1531641234934
+18/07/15 07:56:41 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234935.tmp
+18/07/15 07:56:43 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234935.tmp
+18/07/15 07:56:43 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234935.tmp to /user/raj_ops/output/FlumeData.1531641234935
+18/07/15 07:56:43 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234936.tmp
+18/07/15 07:56:45 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234936.tmp
+18/07/15 07:56:45 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234936.tmp to /user/raj_ops/output/FlumeData.1531641234936
+18/07/15 07:56:45 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234937.tmp
+18/07/15 07:56:47 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234937.tmp
+18/07/15 07:56:47 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234937.tmp to /user/raj_ops/output/FlumeData.1531641234937
+18/07/15 07:56:47 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234938.tmp
+18/07/15 07:56:49 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234938.tmp
+18/07/15 07:56:49 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234938.tmp to /user/raj_ops/output/FlumeData.1531641234938
+18/07/15 07:56:49 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234939.tmp
+18/07/15 07:56:51 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234939.tmp
+18/07/15 07:56:51 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234939.tmp to /user/raj_ops/output/FlumeData.1531641234939
+18/07/15 07:56:51 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234940.tmp
+18/07/15 07:56:53 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234940.tmp
+18/07/15 07:56:53 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234940.tmp to /user/raj_ops/output/FlumeData.1531641234940
+18/07/15 07:56:53 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234941.tmp
+18/07/15 07:56:57 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234941.tmp
+18/07/15 07:56:57 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234941.tmp to /user/raj_ops/output/FlumeData.1531641234941
+18/07/15 07:56:57 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234942.tmp
+18/07/15 07:56:58 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234942.tmp
+18/07/15 07:56:58 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234942.tmp to /user/raj_ops/output/FlumeData.1531641234942
+18/07/15 07:56:58 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234943.tmp
+18/07/15 07:56:59 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234943.tmp
+18/07/15 07:57:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234943.tmp to /user/raj_ops/output/FlumeData.1531641234943
+18/07/15 07:57:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234944.tmp
+18/07/15 07:57:01 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234944.tmp
+18/07/15 07:57:01 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234944.tmp to /user/raj_ops/output/FlumeData.1531641234944
+18/07/15 07:57:01 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234945.tmp
+18/07/15 07:57:03 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234945.tmp
+18/07/15 07:57:03 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234945.tmp to /user/raj_ops/output/FlumeData.1531641234945
+18/07/15 07:57:03 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234946.tmp
+18/07/15 07:57:05 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234946.tmp
+18/07/15 07:57:06 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234946.tmp to /user/raj_ops/output/FlumeData.1531641234946
+18/07/15 07:57:06 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234947.tmp
+18/07/15 07:57:07 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234947.tmp
+18/07/15 07:57:07 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234947.tmp to /user/raj_ops/output/FlumeData.1531641234947
+18/07/15 07:57:07 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234948.tmp
+18/07/15 07:57:09 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234948.tmp
+18/07/15 07:57:09 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234948.tmp to /user/raj_ops/output/FlumeData.1531641234948
+18/07/15 07:57:09 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234949.tmp
+18/07/15 07:57:11 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234949.tmp
+18/07/15 07:57:11 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234949.tmp to /user/raj_ops/output/FlumeData.1531641234949
+18/07/15 07:57:11 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234950.tmp
+18/07/15 07:57:13 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234950.tmp
+18/07/15 07:57:13 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234950.tmp to /user/raj_ops/output/FlumeData.1531641234950
+18/07/15 07:57:13 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234951.tmp
+18/07/15 07:57:17 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234951.tmp
+18/07/15 07:57:17 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234951.tmp to /user/raj_ops/output/FlumeData.1531641234951
+18/07/15 07:57:18 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234952.tmp
+18/07/15 07:57:18 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234952.tmp
+18/07/15 07:57:18 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234952.tmp to /user/raj_ops/output/FlumeData.1531641234952
+18/07/15 07:57:19 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234953.tmp
+18/07/15 07:57:19 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234953.tmp
+18/07/15 07:57:20 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234953.tmp to /user/raj_ops/output/FlumeData.1531641234953
+18/07/15 07:57:20 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234954.tmp
+18/07/15 07:57:21 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234954.tmp
+18/07/15 07:57:21 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234954.tmp to /user/raj_ops/output/FlumeData.1531641234954
+18/07/15 07:57:22 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234955.tmp
+18/07/15 07:57:23 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234955.tmp
+18/07/15 07:57:24 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234955.tmp to /user/raj_ops/output/FlumeData.1531641234955
+18/07/15 07:57:24 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234956.tmp
+18/07/15 07:57:26 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234956.tmp
+18/07/15 07:57:26 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234956.tmp to /user/raj_ops/output/FlumeData.1531641234956
+18/07/15 07:57:26 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234957.tmp
+18/07/15 07:57:28 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234957.tmp
+18/07/15 07:57:29 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234957.tmp to /user/raj_ops/output/FlumeData.1531641234957
+18/07/15 07:57:29 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234958.tmp
+18/07/15 07:57:30 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234958.tmp
+18/07/15 07:57:30 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234958.tmp to /user/raj_ops/output/FlumeData.1531641234958
+18/07/15 07:57:31 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234959.tmp
+18/07/15 07:57:32 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234959.tmp
+18/07/15 07:57:32 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234959.tmp to /user/raj_ops/output/FlumeData.1531641234959
+18/07/15 07:57:33 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234960.tmp
+18/07/15 07:57:35 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234960.tmp
+18/07/15 07:57:35 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234960.tmp to /user/raj_ops/output/FlumeData.1531641234960
+18/07/15 07:57:35 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234961.tmp
+18/07/15 07:57:39 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234961.tmp
+18/07/15 07:57:39 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234961.tmp to /user/raj_ops/output/FlumeData.1531641234961
+18/07/15 07:57:39 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234962.tmp
+18/07/15 07:57:39 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234962.tmp
+18/07/15 07:57:39 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234962.tmp to /user/raj_ops/output/FlumeData.1531641234962
+18/07/15 07:57:39 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234963.tmp
+18/07/15 07:57:41 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234963.tmp
+18/07/15 07:57:41 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234963.tmp to /user/raj_ops/output/FlumeData.1531641234963
+18/07/15 07:57:41 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234964.tmp
+18/07/15 07:57:43 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234964.tmp
+18/07/15 07:57:43 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234964.tmp to /user/raj_ops/output/FlumeData.1531641234964
+18/07/15 07:57:43 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234965.tmp
+18/07/15 07:57:45 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234965.tmp
+18/07/15 07:57:45 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234965.tmp to /user/raj_ops/output/FlumeData.1531641234965
+18/07/15 07:57:45 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234966.tmp
+18/07/15 07:57:47 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234966.tmp
+18/07/15 07:57:47 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234966.tmp to /user/raj_ops/output/FlumeData.1531641234966
+18/07/15 07:57:47 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234967.tmp
+18/07/15 07:57:49 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234967.tmp
+18/07/15 07:57:49 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234967.tmp to /user/raj_ops/output/FlumeData.1531641234967
+18/07/15 07:57:49 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234968.tmp
+18/07/15 07:57:51 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234968.tmp
+18/07/15 07:57:51 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234968.tmp to /user/raj_ops/output/FlumeData.1531641234968
+18/07/15 07:57:51 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234969.tmp
+18/07/15 07:57:53 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234969.tmp
+18/07/15 07:57:53 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234969.tmp to /user/raj_ops/output/FlumeData.1531641234969
+18/07/15 07:57:53 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234970.tmp
+18/07/15 07:57:55 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234970.tmp
+18/07/15 07:57:55 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234970.tmp to /user/raj_ops/output/FlumeData.1531641234970
+18/07/15 07:57:55 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234971.tmp
+18/07/15 07:57:59 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234971.tmp
+18/07/15 07:57:59 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234971.tmp to /user/raj_ops/output/FlumeData.1531641234971
+18/07/15 07:57:59 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234972.tmp
+18/07/15 07:57:59 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234972.tmp
+18/07/15 07:57:59 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234972.tmp to /user/raj_ops/output/FlumeData.1531641234972
+18/07/15 07:57:59 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234973.tmp
+18/07/15 07:58:01 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234973.tmp
+18/07/15 07:58:01 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234973.tmp to /user/raj_ops/output/FlumeData.1531641234973
+18/07/15 07:58:01 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234974.tmp
+18/07/15 07:58:03 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234974.tmp
+18/07/15 07:58:03 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234974.tmp to /user/raj_ops/output/FlumeData.1531641234974
+18/07/15 07:58:03 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234975.tmp
+18/07/15 07:58:05 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234975.tmp
+18/07/15 07:58:05 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234975.tmp to /user/raj_ops/output/FlumeData.1531641234975
+18/07/15 07:58:05 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234976.tmp
+18/07/15 07:58:07 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234976.tmp
+18/07/15 07:58:07 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234976.tmp to /user/raj_ops/output/FlumeData.1531641234976
+18/07/15 07:58:07 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234977.tmp
+18/07/15 07:58:09 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234977.tmp
+18/07/15 07:58:09 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234977.tmp to /user/raj_ops/output/FlumeData.1531641234977
+18/07/15 07:58:09 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234978.tmp
+18/07/15 07:58:11 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234978.tmp
+18/07/15 07:58:11 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234978.tmp to /user/raj_ops/output/FlumeData.1531641234978
+18/07/15 07:58:11 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234979.tmp
+18/07/15 07:58:13 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234979.tmp
+18/07/15 07:58:13 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234979.tmp to /user/raj_ops/output/FlumeData.1531641234979
+18/07/15 07:58:13 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234980.tmp
+18/07/15 07:58:15 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234980.tmp
+18/07/15 07:58:15 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234980.tmp to /user/raj_ops/output/FlumeData.1531641234980
+18/07/15 07:58:15 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234981.tmp
+18/07/15 07:58:19 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234981.tmp
+18/07/15 07:58:19 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234981.tmp to /user/raj_ops/output/FlumeData.1531641234981
+18/07/15 07:58:19 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234982.tmp
+18/07/15 07:58:19 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234982.tmp
+18/07/15 07:58:19 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234982.tmp to /user/raj_ops/output/FlumeData.1531641234982
+18/07/15 07:58:19 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234983.tmp
+18/07/15 07:58:21 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234983.tmp
+18/07/15 07:58:21 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234983.tmp to /user/raj_ops/output/FlumeData.1531641234983
+18/07/15 07:58:21 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234984.tmp
+18/07/15 07:58:23 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234984.tmp
+18/07/15 07:58:23 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234984.tmp to /user/raj_ops/output/FlumeData.1531641234984
+18/07/15 07:58:23 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234985.tmp
+18/07/15 07:58:25 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234985.tmp
+18/07/15 07:58:25 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234985.tmp to /user/raj_ops/output/FlumeData.1531641234985
+18/07/15 07:58:25 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234986.tmp
+18/07/15 07:58:26 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234986.tmp
+18/07/15 07:58:26 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234986.tmp to /user/raj_ops/output/FlumeData.1531641234986
+18/07/15 07:58:26 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234987.tmp
+18/07/15 07:58:28 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234987.tmp
+18/07/15 07:58:28 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234987.tmp to /user/raj_ops/output/FlumeData.1531641234987
+18/07/15 07:58:28 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234988.tmp
+18/07/15 07:58:30 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234988.tmp
+18/07/15 07:58:30 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234988.tmp to /user/raj_ops/output/FlumeData.1531641234988
+18/07/15 07:58:30 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234989.tmp
+18/07/15 07:58:32 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234989.tmp
+18/07/15 07:58:32 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234989.tmp to /user/raj_ops/output/FlumeData.1531641234989
+18/07/15 07:58:32 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234990.tmp
+18/07/15 07:58:34 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234990.tmp
+18/07/15 07:58:34 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234990.tmp to /user/raj_ops/output/FlumeData.1531641234990
+18/07/15 07:58:34 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234991.tmp
+18/07/15 07:58:38 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234991.tmp
+18/07/15 07:58:38 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234991.tmp to /user/raj_ops/output/FlumeData.1531641234991
+18/07/15 07:58:38 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234992.tmp
+18/07/15 07:58:39 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234992.tmp
+18/07/15 07:58:39 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234992.tmp to /user/raj_ops/output/FlumeData.1531641234992
+18/07/15 07:58:39 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234993.tmp
+18/07/15 07:58:40 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234993.tmp
+18/07/15 07:58:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234993.tmp to /user/raj_ops/output/FlumeData.1531641234993
+18/07/15 07:58:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234994.tmp
+18/07/15 07:58:42 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234994.tmp
+18/07/15 07:58:42 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234994.tmp to /user/raj_ops/output/FlumeData.1531641234994
+18/07/15 07:58:42 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234995.tmp
+18/07/15 07:58:44 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234995.tmp
+18/07/15 07:58:44 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234995.tmp to /user/raj_ops/output/FlumeData.1531641234995
+18/07/15 07:58:44 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234996.tmp
+18/07/15 07:58:46 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234996.tmp
+18/07/15 07:58:46 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234996.tmp to /user/raj_ops/output/FlumeData.1531641234996
+18/07/15 07:58:46 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234997.tmp
+18/07/15 07:58:48 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234997.tmp
+18/07/15 07:58:48 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234997.tmp to /user/raj_ops/output/FlumeData.1531641234997
+18/07/15 07:58:48 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234998.tmp
+18/07/15 07:58:51 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234998.tmp
+18/07/15 07:58:51 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234998.tmp to /user/raj_ops/output/FlumeData.1531641234998
+18/07/15 07:58:51 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641234999.tmp
+18/07/15 07:58:53 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641234999.tmp
+18/07/15 07:58:53 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641234999.tmp to /user/raj_ops/output/FlumeData.1531641234999
+18/07/15 07:58:53 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235000.tmp
+18/07/15 07:58:55 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235000.tmp
+18/07/15 07:58:55 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235000.tmp to /user/raj_ops/output/FlumeData.1531641235000
+18/07/15 07:58:55 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235001.tmp
+18/07/15 07:58:59 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235001.tmp
+18/07/15 07:58:59 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235001.tmp to /user/raj_ops/output/FlumeData.1531641235001
+18/07/15 07:58:59 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235002.tmp
+18/07/15 07:58:59 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235002.tmp
+18/07/15 07:58:59 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235002.tmp to /user/raj_ops/output/FlumeData.1531641235002
+18/07/15 07:58:59 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235003.tmp
+18/07/15 07:59:01 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235003.tmp
+18/07/15 07:59:01 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235003.tmp to /user/raj_ops/output/FlumeData.1531641235003
+18/07/15 07:59:01 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235004.tmp
+18/07/15 07:59:03 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235004.tmp
+18/07/15 07:59:03 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235004.tmp to /user/raj_ops/output/FlumeData.1531641235004
+18/07/15 07:59:03 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235005.tmp
+18/07/15 07:59:05 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235005.tmp
+18/07/15 07:59:05 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235005.tmp to /user/raj_ops/output/FlumeData.1531641235005
+18/07/15 07:59:05 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235006.tmp
+18/07/15 07:59:07 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235006.tmp
+18/07/15 07:59:07 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235006.tmp to /user/raj_ops/output/FlumeData.1531641235006
+18/07/15 07:59:07 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235007.tmp
+18/07/15 07:59:09 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235007.tmp
+18/07/15 07:59:09 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235007.tmp to /user/raj_ops/output/FlumeData.1531641235007
+18/07/15 07:59:09 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235008.tmp
+18/07/15 07:59:11 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235008.tmp
+18/07/15 07:59:11 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235008.tmp to /user/raj_ops/output/FlumeData.1531641235008
+18/07/15 07:59:11 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235009.tmp
+18/07/15 07:59:13 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235009.tmp
+18/07/15 07:59:13 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235009.tmp to /user/raj_ops/output/FlumeData.1531641235009
+18/07/15 07:59:13 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235010.tmp
+18/07/15 07:59:15 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235010.tmp
+18/07/15 07:59:15 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235010.tmp to /user/raj_ops/output/FlumeData.1531641235010
+18/07/15 07:59:15 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235011.tmp
+18/07/15 07:59:19 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235011.tmp
+18/07/15 07:59:19 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235011.tmp to /user/raj_ops/output/FlumeData.1531641235011
+18/07/15 07:59:19 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235012.tmp
+18/07/15 07:59:19 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235012.tmp
+18/07/15 07:59:19 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235012.tmp to /user/raj_ops/output/FlumeData.1531641235012
+18/07/15 07:59:19 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235013.tmp
+18/07/15 07:59:21 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235013.tmp
+18/07/15 07:59:21 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235013.tmp to /user/raj_ops/output/FlumeData.1531641235013
+18/07/15 07:59:21 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235014.tmp
+18/07/15 07:59:23 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235014.tmp
+18/07/15 07:59:23 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235014.tmp to /user/raj_ops/output/FlumeData.1531641235014
+18/07/15 07:59:23 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235015.tmp
+18/07/15 07:59:25 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235015.tmp
+18/07/15 07:59:26 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235015.tmp to /user/raj_ops/output/FlumeData.1531641235015
+18/07/15 07:59:26 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235016.tmp
+18/07/15 07:59:27 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235016.tmp
+18/07/15 07:59:27 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235016.tmp to /user/raj_ops/output/FlumeData.1531641235016
+18/07/15 07:59:27 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235017.tmp
+18/07/15 07:59:29 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235017.tmp
+18/07/15 07:59:29 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235017.tmp to /user/raj_ops/output/FlumeData.1531641235017
+18/07/15 07:59:29 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235018.tmp
+18/07/15 07:59:31 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235018.tmp
+18/07/15 07:59:31 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235018.tmp to /user/raj_ops/output/FlumeData.1531641235018
+18/07/15 07:59:31 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235019.tmp
+18/07/15 07:59:33 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235019.tmp
+18/07/15 07:59:33 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235019.tmp to /user/raj_ops/output/FlumeData.1531641235019
+18/07/15 07:59:33 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235020.tmp
+18/07/15 07:59:35 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235020.tmp
+18/07/15 07:59:35 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235020.tmp to /user/raj_ops/output/FlumeData.1531641235020
+18/07/15 07:59:36 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235021.tmp
+18/07/15 07:59:40 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235021.tmp
+18/07/15 07:59:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235021.tmp to /user/raj_ops/output/FlumeData.1531641235021
+18/07/15 07:59:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235022.tmp
+18/07/15 07:59:40 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235022.tmp
+18/07/15 07:59:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235022.tmp to /user/raj_ops/output/FlumeData.1531641235022
+18/07/15 07:59:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235023.tmp
+18/07/15 07:59:42 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235023.tmp
+18/07/15 07:59:42 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235023.tmp to /user/raj_ops/output/FlumeData.1531641235023
+18/07/15 07:59:42 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235024.tmp
+18/07/15 07:59:44 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235024.tmp
+18/07/15 07:59:44 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235024.tmp to /user/raj_ops/output/FlumeData.1531641235024
+18/07/15 07:59:44 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235025.tmp
+18/07/15 07:59:46 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235025.tmp
+18/07/15 07:59:46 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235025.tmp to /user/raj_ops/output/FlumeData.1531641235025
+18/07/15 07:59:46 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235026.tmp
+18/07/15 07:59:48 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235026.tmp
+18/07/15 07:59:48 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235026.tmp to /user/raj_ops/output/FlumeData.1531641235026
+18/07/15 07:59:48 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235027.tmp
+18/07/15 07:59:50 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235027.tmp
+18/07/15 07:59:50 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235027.tmp to /user/raj_ops/output/FlumeData.1531641235027
+18/07/15 07:59:50 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235028.tmp
+18/07/15 07:59:52 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235028.tmp
+18/07/15 07:59:52 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235028.tmp to /user/raj_ops/output/FlumeData.1531641235028
+18/07/15 07:59:52 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235029.tmp
+18/07/15 07:59:54 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235029.tmp
+18/07/15 07:59:54 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235029.tmp to /user/raj_ops/output/FlumeData.1531641235029
+18/07/15 07:59:54 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235030.tmp
+18/07/15 07:59:56 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235030.tmp
+18/07/15 07:59:56 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235030.tmp to /user/raj_ops/output/FlumeData.1531641235030
+18/07/15 07:59:56 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235031.tmp
+18/07/15 07:59:58 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235031.tmp
+18/07/15 07:59:58 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235031.tmp to /user/raj_ops/output/FlumeData.1531641235031
+18/07/15 07:59:58 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235032.tmp
+18/07/15 08:00:00 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235032.tmp
+18/07/15 08:00:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235032.tmp to /user/raj_ops/output/FlumeData.1531641235032
+18/07/15 08:00:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235033.tmp
+18/07/15 08:00:02 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235033.tmp
+18/07/15 08:00:02 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235033.tmp to /user/raj_ops/output/FlumeData.1531641235033
+18/07/15 08:00:02 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235034.tmp
+18/07/15 08:00:04 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235034.tmp
+18/07/15 08:00:04 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235034.tmp to /user/raj_ops/output/FlumeData.1531641235034
+18/07/15 08:00:04 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235035.tmp
+18/07/15 08:00:06 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235035.tmp
+18/07/15 08:00:06 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235035.tmp to /user/raj_ops/output/FlumeData.1531641235035
+18/07/15 08:00:06 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235036.tmp
+18/07/15 08:00:08 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235036.tmp
+18/07/15 08:00:08 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235036.tmp to /user/raj_ops/output/FlumeData.1531641235036
+18/07/15 08:00:08 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235037.tmp
+18/07/15 08:00:11 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235037.tmp
+18/07/15 08:00:11 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235037.tmp to /user/raj_ops/output/FlumeData.1531641235037
+18/07/15 08:00:11 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235038.tmp
+18/07/15 08:00:13 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235038.tmp
+18/07/15 08:00:13 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235038.tmp to /user/raj_ops/output/FlumeData.1531641235038
+18/07/15 08:00:13 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235039.tmp
+18/07/15 08:00:15 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235039.tmp
+18/07/15 08:00:15 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235039.tmp to /user/raj_ops/output/FlumeData.1531641235039
+18/07/15 08:00:15 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235040.tmp
+18/07/15 08:00:19 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235040.tmp
+18/07/15 08:00:19 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235040.tmp to /user/raj_ops/output/FlumeData.1531641235040
+18/07/15 08:00:19 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235041.tmp
+18/07/15 08:00:20 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235041.tmp
+18/07/15 08:00:20 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235041.tmp to /user/raj_ops/output/FlumeData.1531641235041
+18/07/15 08:00:20 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235042.tmp
+18/07/15 08:00:21 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235042.tmp
+18/07/15 08:00:21 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235042.tmp to /user/raj_ops/output/FlumeData.1531641235042
+18/07/15 08:00:21 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235043.tmp
+18/07/15 08:00:23 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235043.tmp
+18/07/15 08:00:23 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235043.tmp to /user/raj_ops/output/FlumeData.1531641235043
+18/07/15 08:00:23 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235044.tmp
+18/07/15 08:00:25 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235044.tmp
+18/07/15 08:00:25 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235044.tmp to /user/raj_ops/output/FlumeData.1531641235044
+18/07/15 08:00:25 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235045.tmp
+18/07/15 08:00:27 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235045.tmp
+18/07/15 08:00:27 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235045.tmp to /user/raj_ops/output/FlumeData.1531641235045
+18/07/15 08:00:27 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235046.tmp
+18/07/15 08:00:29 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235046.tmp
+18/07/15 08:00:29 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235046.tmp to /user/raj_ops/output/FlumeData.1531641235046
+18/07/15 08:00:29 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235047.tmp
+18/07/15 08:00:31 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235047.tmp
+18/07/15 08:00:31 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235047.tmp to /user/raj_ops/output/FlumeData.1531641235047
+18/07/15 08:00:31 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235048.tmp
+18/07/15 08:00:33 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235048.tmp
+18/07/15 08:00:33 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235048.tmp to /user/raj_ops/output/FlumeData.1531641235048
+18/07/15 08:00:33 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235049.tmp
+18/07/15 08:00:35 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235049.tmp
+18/07/15 08:00:35 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235049.tmp to /user/raj_ops/output/FlumeData.1531641235049
+18/07/15 08:00:35 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235050.tmp
+18/07/15 08:00:39 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235050.tmp
+18/07/15 08:00:39 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235050.tmp to /user/raj_ops/output/FlumeData.1531641235050
+18/07/15 08:00:39 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235051.tmp
+18/07/15 08:00:40 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235051.tmp
+18/07/15 08:00:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235051.tmp to /user/raj_ops/output/FlumeData.1531641235051
+18/07/15 08:00:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235052.tmp
+18/07/15 08:00:41 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235052.tmp
+18/07/15 08:00:41 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235052.tmp to /user/raj_ops/output/FlumeData.1531641235052
+18/07/15 08:00:41 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235053.tmp
+18/07/15 08:00:43 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235053.tmp
+18/07/15 08:00:43 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235053.tmp to /user/raj_ops/output/FlumeData.1531641235053
+18/07/15 08:00:43 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235054.tmp
+18/07/15 08:00:45 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235054.tmp
+18/07/15 08:00:45 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235054.tmp to /user/raj_ops/output/FlumeData.1531641235054
+18/07/15 08:00:45 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235055.tmp
+18/07/15 08:00:47 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235055.tmp
+18/07/15 08:00:47 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235055.tmp to /user/raj_ops/output/FlumeData.1531641235055
+18/07/15 08:00:47 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235056.tmp
+18/07/15 08:00:49 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235056.tmp
+18/07/15 08:00:49 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235056.tmp to /user/raj_ops/output/FlumeData.1531641235056
+18/07/15 08:00:49 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235057.tmp
+18/07/15 08:00:51 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235057.tmp
+18/07/15 08:00:51 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235057.tmp to /user/raj_ops/output/FlumeData.1531641235057
+18/07/15 08:00:51 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235058.tmp
+18/07/15 08:00:53 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235058.tmp
+18/07/15 08:00:53 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235058.tmp to /user/raj_ops/output/FlumeData.1531641235058
+18/07/15 08:00:53 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235059.tmp
+18/07/15 08:00:55 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235059.tmp
+18/07/15 08:00:55 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235059.tmp to /user/raj_ops/output/FlumeData.1531641235059
+18/07/15 08:00:55 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235060.tmp
+18/07/15 08:00:59 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235060.tmp
+18/07/15 08:00:59 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235060.tmp to /user/raj_ops/output/FlumeData.1531641235060
+18/07/15 08:00:59 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235061.tmp
+18/07/15 08:01:00 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235061.tmp
+18/07/15 08:01:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235061.tmp to /user/raj_ops/output/FlumeData.1531641235061
+18/07/15 08:01:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235062.tmp
+18/07/15 08:01:01 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235062.tmp
+18/07/15 08:01:01 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235062.tmp to /user/raj_ops/output/FlumeData.1531641235062
+18/07/15 08:01:01 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235063.tmp
+18/07/15 08:01:04 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235063.tmp
+18/07/15 08:01:04 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235063.tmp to /user/raj_ops/output/FlumeData.1531641235063
+18/07/15 08:01:04 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235064.tmp
+18/07/15 08:01:06 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235064.tmp
+18/07/15 08:01:06 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235064.tmp to /user/raj_ops/output/FlumeData.1531641235064
+18/07/15 08:01:06 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235065.tmp
+18/07/15 08:01:08 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235065.tmp
+18/07/15 08:01:08 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235065.tmp to /user/raj_ops/output/FlumeData.1531641235065
+18/07/15 08:01:08 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235066.tmp
+18/07/15 08:01:10 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235066.tmp
+18/07/15 08:01:10 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235066.tmp to /user/raj_ops/output/FlumeData.1531641235066
+18/07/15 08:01:10 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235067.tmp
+18/07/15 08:01:12 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235067.tmp
+18/07/15 08:01:12 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235067.tmp to /user/raj_ops/output/FlumeData.1531641235067
+18/07/15 08:01:12 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235068.tmp
+18/07/15 08:01:14 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235068.tmp
+18/07/15 08:01:14 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235068.tmp to /user/raj_ops/output/FlumeData.1531641235068
+18/07/15 08:01:14 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235069.tmp
+18/07/15 08:01:16 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235069.tmp
+18/07/15 08:01:16 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235069.tmp to /user/raj_ops/output/FlumeData.1531641235069
+18/07/15 08:01:16 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235070.tmp
+18/07/15 08:01:20 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235070.tmp
+18/07/15 08:01:20 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235070.tmp to /user/raj_ops/output/FlumeData.1531641235070
+18/07/15 08:01:20 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235071.tmp
+18/07/15 08:01:20 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235071.tmp
+18/07/15 08:01:20 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235071.tmp to /user/raj_ops/output/FlumeData.1531641235071
+18/07/15 08:01:20 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235072.tmp
+18/07/15 08:01:22 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235072.tmp
+18/07/15 08:01:22 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235072.tmp to /user/raj_ops/output/FlumeData.1531641235072
+18/07/15 08:01:22 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235073.tmp
+18/07/15 08:01:24 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235073.tmp
+18/07/15 08:01:24 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235073.tmp to /user/raj_ops/output/FlumeData.1531641235073
+18/07/15 08:01:24 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235074.tmp
+18/07/15 08:01:26 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235074.tmp
+18/07/15 08:01:26 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235074.tmp to /user/raj_ops/output/FlumeData.1531641235074
+18/07/15 08:01:26 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235075.tmp
+18/07/15 08:01:28 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235075.tmp
+18/07/15 08:01:28 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235075.tmp to /user/raj_ops/output/FlumeData.1531641235075
+18/07/15 08:01:28 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235076.tmp
+18/07/15 08:01:30 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235076.tmp
+18/07/15 08:01:30 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235076.tmp to /user/raj_ops/output/FlumeData.1531641235076
+18/07/15 08:01:30 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235077.tmp
+18/07/15 08:01:32 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235077.tmp
+18/07/15 08:01:32 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235077.tmp to /user/raj_ops/output/FlumeData.1531641235077
+18/07/15 08:01:32 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235078.tmp
+18/07/15 08:01:34 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235078.tmp
+18/07/15 08:01:34 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235078.tmp to /user/raj_ops/output/FlumeData.1531641235078
+18/07/15 08:01:34 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235079.tmp
+18/07/15 08:01:36 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235079.tmp
+18/07/15 08:01:36 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235079.tmp to /user/raj_ops/output/FlumeData.1531641235079
+18/07/15 08:01:36 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235080.tmp
+18/07/15 08:01:40 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235080.tmp
+18/07/15 08:01:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235080.tmp to /user/raj_ops/output/FlumeData.1531641235080
+18/07/15 08:01:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235081.tmp
+18/07/15 08:01:40 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235081.tmp
+18/07/15 08:01:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235081.tmp to /user/raj_ops/output/FlumeData.1531641235081
+18/07/15 08:01:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235082.tmp
+18/07/15 08:01:42 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235082.tmp
+18/07/15 08:01:42 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235082.tmp to /user/raj_ops/output/FlumeData.1531641235082
+18/07/15 08:01:42 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235083.tmp
+18/07/15 08:01:44 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235083.tmp
+18/07/15 08:01:44 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235083.tmp to /user/raj_ops/output/FlumeData.1531641235083
+18/07/15 08:01:44 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235084.tmp
+18/07/15 08:01:46 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235084.tmp
+18/07/15 08:01:46 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235084.tmp to /user/raj_ops/output/FlumeData.1531641235084
+18/07/15 08:01:46 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235085.tmp
+18/07/15 08:01:48 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235085.tmp
+18/07/15 08:01:48 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235085.tmp to /user/raj_ops/output/FlumeData.1531641235085
+18/07/15 08:01:48 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235086.tmp
+18/07/15 08:01:50 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235086.tmp
+18/07/15 08:01:50 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235086.tmp to /user/raj_ops/output/FlumeData.1531641235086
+18/07/15 08:01:50 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235087.tmp
+18/07/15 08:01:52 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235087.tmp
+18/07/15 08:01:52 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235087.tmp to /user/raj_ops/output/FlumeData.1531641235087
+18/07/15 08:01:52 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235088.tmp
+18/07/15 08:01:54 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235088.tmp
+18/07/15 08:01:54 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235088.tmp to /user/raj_ops/output/FlumeData.1531641235088
+18/07/15 08:01:54 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235089.tmp
+18/07/15 08:01:56 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235089.tmp
+18/07/15 08:01:56 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235089.tmp to /user/raj_ops/output/FlumeData.1531641235089
+18/07/15 08:01:56 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235090.tmp
+18/07/15 08:02:00 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235090.tmp
+18/07/15 08:02:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235090.tmp to /user/raj_ops/output/FlumeData.1531641235090
+18/07/15 08:02:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235091.tmp
+18/07/15 08:02:00 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235091.tmp
+18/07/15 08:02:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235091.tmp to /user/raj_ops/output/FlumeData.1531641235091
+18/07/15 08:02:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235092.tmp
+18/07/15 08:02:02 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235092.tmp
+18/07/15 08:02:02 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235092.tmp to /user/raj_ops/output/FlumeData.1531641235092
+18/07/15 08:02:02 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235093.tmp
+18/07/15 08:02:04 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235093.tmp
+18/07/15 08:02:04 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235093.tmp to /user/raj_ops/output/FlumeData.1531641235093
+18/07/15 08:02:04 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235094.tmp
+18/07/15 08:02:06 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235094.tmp
+18/07/15 08:02:06 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235094.tmp to /user/raj_ops/output/FlumeData.1531641235094
+18/07/15 08:02:06 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235095.tmp
+18/07/15 08:02:08 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235095.tmp
+18/07/15 08:02:08 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235095.tmp to /user/raj_ops/output/FlumeData.1531641235095
+18/07/15 08:02:08 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235096.tmp
+18/07/15 08:02:10 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235096.tmp
+18/07/15 08:02:11 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235096.tmp to /user/raj_ops/output/FlumeData.1531641235096
+18/07/15 08:02:11 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235097.tmp
+18/07/15 08:02:13 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235097.tmp
+18/07/15 08:02:14 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235097.tmp to /user/raj_ops/output/FlumeData.1531641235097
+18/07/15 08:02:14 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235098.tmp
+18/07/15 08:02:15 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235098.tmp
+18/07/15 08:02:15 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235098.tmp to /user/raj_ops/output/FlumeData.1531641235098
+18/07/15 08:02:15 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235099.tmp
+18/07/15 08:02:19 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235099.tmp
+18/07/15 08:02:19 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235099.tmp to /user/raj_ops/output/FlumeData.1531641235099
+18/07/15 08:02:19 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235100.tmp
+18/07/15 08:02:20 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235100.tmp
+18/07/15 08:02:20 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235100.tmp to /user/raj_ops/output/FlumeData.1531641235100
+18/07/15 08:02:20 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235101.tmp
+18/07/15 08:02:21 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235101.tmp
+18/07/15 08:02:21 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235101.tmp to /user/raj_ops/output/FlumeData.1531641235101
+18/07/15 08:02:21 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235102.tmp
+18/07/15 08:02:23 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235102.tmp
+18/07/15 08:02:24 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235102.tmp to /user/raj_ops/output/FlumeData.1531641235102
+18/07/15 08:02:24 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235103.tmp
+18/07/15 08:02:25 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235103.tmp
+18/07/15 08:02:25 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235103.tmp to /user/raj_ops/output/FlumeData.1531641235103
+18/07/15 08:02:25 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235104.tmp
+18/07/15 08:02:27 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235104.tmp
+18/07/15 08:02:27 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235104.tmp to /user/raj_ops/output/FlumeData.1531641235104
+18/07/15 08:02:27 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235105.tmp
+18/07/15 08:02:29 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235105.tmp
+18/07/15 08:02:29 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235105.tmp to /user/raj_ops/output/FlumeData.1531641235105
+18/07/15 08:02:29 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235106.tmp
+18/07/15 08:02:31 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235106.tmp
+18/07/15 08:02:31 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235106.tmp to /user/raj_ops/output/FlumeData.1531641235106
+18/07/15 08:02:31 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235107.tmp
+18/07/15 08:02:33 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235107.tmp
+18/07/15 08:02:33 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235107.tmp to /user/raj_ops/output/FlumeData.1531641235107
+18/07/15 08:02:33 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235108.tmp
+18/07/15 08:02:35 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235108.tmp
+18/07/15 08:02:35 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235108.tmp to /user/raj_ops/output/FlumeData.1531641235108
+18/07/15 08:02:35 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235109.tmp
+18/07/15 08:02:39 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235109.tmp
+18/07/15 08:02:39 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235109.tmp to /user/raj_ops/output/FlumeData.1531641235109
+18/07/15 08:02:39 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235110.tmp
+18/07/15 08:02:40 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235110.tmp
+18/07/15 08:02:40 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235110.tmp to /user/raj_ops/output/FlumeData.1531641235110
+18/07/15 08:02:40 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235111.tmp
+18/07/15 08:02:41 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235111.tmp
+18/07/15 08:02:41 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235111.tmp to /user/raj_ops/output/FlumeData.1531641235111
+18/07/15 08:02:41 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235112.tmp
+18/07/15 08:02:43 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235112.tmp
+18/07/15 08:02:43 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235112.tmp to /user/raj_ops/output/FlumeData.1531641235112
+18/07/15 08:02:43 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235113.tmp
+18/07/15 08:02:45 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235113.tmp
+18/07/15 08:02:45 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235113.tmp to /user/raj_ops/output/FlumeData.1531641235113
+18/07/15 08:02:45 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235114.tmp
+18/07/15 08:02:47 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235114.tmp
+18/07/15 08:02:47 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235114.tmp to /user/raj_ops/output/FlumeData.1531641235114
+18/07/15 08:02:47 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235115.tmp
+18/07/15 08:02:49 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235115.tmp
+18/07/15 08:02:49 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235115.tmp to /user/raj_ops/output/FlumeData.1531641235115
+18/07/15 08:02:49 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235116.tmp
+18/07/15 08:02:51 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235116.tmp
+18/07/15 08:02:51 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235116.tmp to /user/raj_ops/output/FlumeData.1531641235116
+18/07/15 08:02:51 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235117.tmp
+18/07/15 08:02:53 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235117.tmp
+18/07/15 08:02:53 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235117.tmp to /user/raj_ops/output/FlumeData.1531641235117
+18/07/15 08:02:53 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235118.tmp
+18/07/15 08:02:55 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235118.tmp
+18/07/15 08:02:55 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235118.tmp to /user/raj_ops/output/FlumeData.1531641235118
+18/07/15 08:02:55 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235119.tmp
+18/07/15 08:02:59 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235119.tmp
+18/07/15 08:03:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235119.tmp to /user/raj_ops/output/FlumeData.1531641235119
+18/07/15 08:03:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235120.tmp
+18/07/15 08:03:00 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235120.tmp
+18/07/15 08:03:00 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235120.tmp to /user/raj_ops/output/FlumeData.1531641235120
+18/07/15 08:03:00 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235121.tmp
+18/07/15 08:03:01 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235121.tmp
+18/07/15 08:03:01 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235121.tmp to /user/raj_ops/output/FlumeData.1531641235121
+18/07/15 08:03:01 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235122.tmp
+18/07/15 08:03:03 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235122.tmp
+18/07/15 08:03:03 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235122.tmp to /user/raj_ops/output/FlumeData.1531641235122
+18/07/15 08:03:03 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235123.tmp
+18/07/15 08:03:05 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235123.tmp
+18/07/15 08:03:05 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235123.tmp to /user/raj_ops/output/FlumeData.1531641235123
+18/07/15 08:03:05 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235124.tmp
+18/07/15 08:03:08 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235124.tmp
+18/07/15 08:03:08 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235124.tmp to /user/raj_ops/output/FlumeData.1531641235124
+18/07/15 08:03:08 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235125.tmp
+18/07/15 08:03:10 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235125.tmp
+18/07/15 08:03:11 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235125.tmp to /user/raj_ops/output/FlumeData.1531641235125
+18/07/15 08:03:11 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235126.tmp
+18/07/15 08:03:12 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235126.tmp
+18/07/15 08:03:12 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235126.tmp to /user/raj_ops/output/FlumeData.1531641235126
+18/07/15 08:03:12 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235127.tmp
+18/07/15 08:03:14 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235127.tmp
+18/07/15 08:03:14 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235127.tmp to /user/raj_ops/output/FlumeData.1531641235127
+18/07/15 08:03:14 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235128.tmp
+18/07/15 08:03:16 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235128.tmp
+18/07/15 08:03:16 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235128.tmp to /user/raj_ops/output/FlumeData.1531641235128
+18/07/15 08:03:16 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235129.tmp
+18/07/15 08:03:21 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235129.tmp
+18/07/15 08:03:21 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235129.tmp to /user/raj_ops/output/FlumeData.1531641235129
+18/07/15 08:03:21 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235130.tmp
+18/07/15 08:03:21 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235130.tmp
+18/07/15 08:03:21 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235130.tmp to /user/raj_ops/output/FlumeData.1531641235130
+18/07/15 08:03:21 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235131.tmp
+18/07/15 08:03:23 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235131.tmp
+18/07/15 08:03:23 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235131.tmp to /user/raj_ops/output/FlumeData.1531641235131
+18/07/15 08:03:23 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235132.tmp
+18/07/15 08:03:25 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235132.tmp
+18/07/15 08:03:25 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235132.tmp to /user/raj_ops/output/FlumeData.1531641235132
+18/07/15 08:03:25 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235133.tmp
+18/07/15 08:03:27 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235133.tmp
+18/07/15 08:03:27 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235133.tmp to /user/raj_ops/output/FlumeData.1531641235133
+18/07/15 08:03:27 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235134.tmp
+18/07/15 08:03:29 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235134.tmp
+18/07/15 08:03:29 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235134.tmp to /user/raj_ops/output/FlumeData.1531641235134
+18/07/15 08:03:29 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235135.tmp
+18/07/15 08:03:31 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235135.tmp
+18/07/15 08:03:31 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235135.tmp to /user/raj_ops/output/FlumeData.1531641235135
+18/07/15 08:03:31 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235136.tmp
+18/07/15 08:03:33 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235136.tmp
+18/07/15 08:03:33 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235136.tmp to /user/raj_ops/output/FlumeData.1531641235136
+18/07/15 08:03:33 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235137.tmp
+18/07/15 08:03:35 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235137.tmp
+18/07/15 08:03:35 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235137.tmp to /user/raj_ops/output/FlumeData.1531641235137
+18/07/15 08:03:35 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235138.tmp
+18/07/15 08:03:37 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235138.tmp
+18/07/15 08:03:37 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235138.tmp to /user/raj_ops/output/FlumeData.1531641235138
+18/07/15 08:03:37 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235139.tmp
+18/07/15 08:03:41 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235139.tmp
+18/07/15 08:03:41 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235139.tmp to /user/raj_ops/output/FlumeData.1531641235139
+18/07/15 08:03:41 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235140.tmp
+18/07/15 08:03:41 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235140.tmp
+18/07/15 08:03:41 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235140.tmp to /user/raj_ops/output/FlumeData.1531641235140
+18/07/15 08:03:41 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235141.tmp
+18/07/15 08:03:43 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235141.tmp
+18/07/15 08:03:43 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235141.tmp to /user/raj_ops/output/FlumeData.1531641235141
+18/07/15 08:03:43 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235142.tmp
+18/07/15 08:03:45 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235142.tmp
+18/07/15 08:03:45 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235142.tmp to /user/raj_ops/output/FlumeData.1531641235142
+18/07/15 08:03:45 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235143.tmp
+18/07/15 08:03:47 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235143.tmp
+18/07/15 08:03:47 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235143.tmp to /user/raj_ops/output/FlumeData.1531641235143
+18/07/15 08:03:47 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235144.tmp
+18/07/15 08:03:49 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235144.tmp
+18/07/15 08:03:49 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235144.tmp to /user/raj_ops/output/FlumeData.1531641235144
+18/07/15 08:03:49 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235145.tmp
+18/07/15 08:03:51 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235145.tmp
+18/07/15 08:03:51 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235145.tmp to /user/raj_ops/output/FlumeData.1531641235145
+18/07/15 08:03:51 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235146.tmp
+18/07/15 08:03:53 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235146.tmp
+18/07/15 08:03:53 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235146.tmp to /user/raj_ops/output/FlumeData.1531641235146
+18/07/15 08:03:53 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235147.tmp
+18/07/15 08:03:55 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235147.tmp
+18/07/15 08:03:55 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235147.tmp to /user/raj_ops/output/FlumeData.1531641235147
+18/07/15 08:03:55 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235148.tmp
+18/07/15 08:03:57 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235148.tmp
+18/07/15 08:03:57 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235148.tmp to /user/raj_ops/output/FlumeData.1531641235148
+18/07/15 08:03:57 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235149.tmp
+18/07/15 08:04:01 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235149.tmp
+18/07/15 08:04:01 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235149.tmp to /user/raj_ops/output/FlumeData.1531641235149
+18/07/15 08:04:01 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235150.tmp
+18/07/15 08:04:01 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235150.tmp
+18/07/15 08:04:01 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235150.tmp to /user/raj_ops/output/FlumeData.1531641235150
+18/07/15 08:04:01 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235151.tmp
+18/07/15 08:04:03 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235151.tmp
+18/07/15 08:04:03 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235151.tmp to /user/raj_ops/output/FlumeData.1531641235151
+18/07/15 08:04:03 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235152.tmp
+18/07/15 08:04:05 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235152.tmp
+18/07/15 08:04:05 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235152.tmp to /user/raj_ops/output/FlumeData.1531641235152
+18/07/15 08:04:05 INFO hdfs.BucketWriter: Creating /user/raj_ops/output//FlumeData.1531641235153.tmp
+18/07/15 08:04:35 INFO hdfs.BucketWriter: Closing /user/raj_ops/output//FlumeData.1531641235153.tmp
+18/07/15 08:04:35 INFO hdfs.BucketWriter: Renaming /user/raj_ops/output/FlumeData.1531641235153.tmp to /user/raj_ops/output/FlumeData.1531641235153
+18/07/15 08:04:35 INFO hdfs.HDFSEventSink: Writer callback called.
